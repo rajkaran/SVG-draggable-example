@@ -1,0 +1,92 @@
+<div class="container-fluid sk-content-bottom-margin">
+    <div class="row my-3 pb-3">
+        <div class="col-1">
+            <mat-card>
+                <div>
+                    <mat-icon>text_rotation_none</mat-icon>
+                </div>
+                <div>
+                    <mat-icon>text_fields</mat-icon>
+                </div>
+                <div>
+                    <mat-icon>panorama_fish_eye</mat-icon>
+                </div>
+                <div>
+                    <mat-icon>details</mat-icon>
+                </div>
+                <div>
+                    <mat-icon>crop_din</mat-icon>
+                </div>
+                <div>
+                    <mat-icon>zoom_in</mat-icon>
+                </div>
+                <div>
+                    <mat-icon>zoom_out</mat-icon>
+                </div>
+            </mat-card>
+        </div>
+        <div class="col-8 px-0 bg-warning" >
+            <div class="row no-gutters sk-aspect-ratio16by9"  >
+                <div class="col mat-elevation-z2" #svgWrapper>
+                    <svg [attr.viewBox]="svgDimension.viewBox" #svgElement>
+                        <svg:rect [attr.width]="rectangle.width"
+                        [attr.height]="rectangle.height" [attr.x]="rectangle.x"
+                        [attr.y]="rectangle.y"
+                        style="fill:rgb(134,23,255);stroke-width:1;stroke:rgb(0,0,0);"
+                        class="draggable"
+                        (mousedown)="startDrag($event)"
+                        (mousemove)="drag($event)"
+                        (mouseup)="endDrag($event)" />
+
+                        <svg:circle cx="50" cy="50" r="40" stroke="black"
+                        stroke-width="3" fill="red" class="draggable"
+                        (mousedown)="startDrag($event)"
+                        (mousemove)="drag($event)" (mouseup)="endDrag($event)" />
+
+                        <svg:ellipse cx="200" cy="80" rx="100" ry="50"
+                        style="fill:yellow;stroke:purple;stroke-width:2"
+                        class="draggable" (mousedown)="startDrag($event)"
+                        (mousemove)="drag($event)" (mouseup)="endDrag($event)" />
+
+                        <svg:line x1="75" y1="10" x2="200" y2="200"
+                        style="stroke:rgb(255,0,0);stroke-width:2"
+                        class="draggable" (mousedown)="startDrag($event)"
+                        (mousemove)="drag($event)" (mouseup)="endDrag($event)" />
+
+                        <svg:polygon points="200,10 250,190 160,210"
+                        style="fill:lime;stroke:purple;stroke-width:1"
+                        class="draggable" (mousedown)="startDrag($event)"
+                        (mousemove)="drag($event)" (mouseup)="endDrag($event)" />
+
+                        <svg:text x="10" y="150" fill="red" class="draggable"
+                        (mousedown)="startDrag($event)"
+                        (mousemove)="drag($event)" (mouseup)="endDrag($event)"
+                        >I love SVG!</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <mat-card>
+                <div class="row">
+                    <div class="col">
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Height">
+                        </mat-form-field>
+                    </div>
+                    <div class="col">
+                        <mat-form-field class="w-100">
+                            <input matInput placeholder="Width">
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        list of shapes and groups
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
